@@ -1,23 +1,21 @@
+
 syntax on
 
+" -------------------------------------------------------------------------
+" settings from Primeagen
+" --------------------------------------------------------------------------
 set guicursor=
 set noshowmatch
 set relativenumber
 set nohlsearch
-"set hidden
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
-"set smartindent
-"set nu
-"set nowrap
-"set smartcase
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
 set undofile
-"set incsearch
 set termguicolors
 set scrolloff=8
 
@@ -32,7 +30,11 @@ set updatetime=50
 set shortmess+=c
 
 set colorcolumn=80
+
 highlight ColorColumn ctermbg=0 guibg=lightgrey
+" ----------------------------------------------------------------------------
+"  End
+" ----------------------------------------------------------------------------
 
 silent! if plug#begin('~/.vim/plugged')
 
@@ -76,8 +78,7 @@ Plug 'mbbill/undotree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-"  I AM SO SORRY FOR DOING COLOR SCHEMES IN MY VIMRC, BUT I HAVE
-"  TOOOOOOOOOOOOO
+"  DOING COLOR SCHEMES
 Plug 'gruvbox-community/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 Plug 'phanviet/vim-monokai-pro'
@@ -98,7 +99,7 @@ endif
 
 let g:gruvbox_contrast_dark = 'hard'
 
-" --- The Greatest plugin of all time.  I am not bias
+" --- The Greatest plugin of all time.
 let g:vim_be_good_floating = 1
 
 " --- vim go (polyglot) settings.
@@ -282,7 +283,6 @@ set ruler
 set cursorline
 set cursorcolumn
 
-
 " }}}
 
 " MAPPINGS
@@ -291,11 +291,6 @@ set cursorcolumn
 " ----------------------------------------------------------------------------
 " Basic mappings
 " ----------------------------------------------------------------------------
-
-" Profile
-"iabbrev @@ hmybmny@gmail.com
-"iabbrev @b hmybmny.com
-
 " Edit myvimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
@@ -355,12 +350,6 @@ endfunction
 " ----------------------------------------------------------------------------
 " <F8> | Color scheme selector
 " ----------------------------------------------------------------------------
-"
-"set background=dark
-
-"let g:molokai_original = 1
-"colorschem molokai
-
 function! s:rotate_colors()
 if !exists('s:colors')
 let s:colors = s:colors()
