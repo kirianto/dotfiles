@@ -1,5 +1,7 @@
+set nocompatible
 
 syntax on
+syntax enable
 
 " -------------------------------------------------------------------------
 " settings from Primeagen
@@ -94,6 +96,9 @@ Plug 'vhdirk/vim-cmake'
 "Plug 'davidhalter/jedi-vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+Plug 'tmux-plugins/vim-tmux'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+
 call plug#end()
 endif
 
@@ -595,6 +600,10 @@ let g:name = "Kurniawan Irianto"
 " enabled to use the mouse
 set mouse=a
 
+if exists('$TMUX')  " Support resizing in tmux
+  set ttymouse=xterm2
+endif
+
 " select all
 nnoremap vA ggVG
 
@@ -684,3 +693,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
